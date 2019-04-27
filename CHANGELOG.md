@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
 
-* TODO: Describe initial release.
+## 0.1.0
+* As of this version, I have added the basic input fields with basic validation support.
