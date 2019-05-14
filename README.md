@@ -17,7 +17,8 @@ c. **onChange** call back method on every change event.
 d. **validators** takes an array of ```FormlyValidator``` which runs onChange or onSubmit based on ```FormlyValidator``` bool propery onChange. Each ```FormlyValidator``` class has property validator which is a callback method for validation, which should return null on all times except when error and then it should return an error message string.    
 e. **asyncValidators** similar to validators but designed for Future returning validators of type ```AsyncFormlyValidator```. The future should however return a true or false. The message property will be used on error message.    
 f. **templateOptions** takes an object of type ```FormlyTemplateOptions``` which has properties for setting ```label```, ```hint``` and ```icon``` for the field.    
-e. **options**  takes an array of ```SelectOption``` for type ```radio``` and ```select``` fields.
+g. **options**  takes an array of ```SelectOption``` for type ```radio``` and ```select``` fields.
+h. **hideFunction** takes a call back function which if returns true will hide this field.
         
 ### Create a basic Formly Form
 In your builder method of statefull or state less widget use the FormlyForm widget like below:
