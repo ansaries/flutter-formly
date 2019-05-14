@@ -51,12 +51,10 @@ abstract class Validators implements IFormlyBloc {
         AsyncFormlyValidator v = f.asyncValidators[j];
          if(v.onChange != null && v.onChange || onSubmit) {
           dynamic _v = await v.validator(modelValue, f);
-          if(_v is Call && _v.reply == true) {
+          if(_v == true) {
               _updateFieldValidStatus(null, f, modelValue[f.key], v);
-          } else if(_v is Call && _v.reply!=null && _v.reply['error']!=null) {
-            _updateFieldValidStatus(v.message ?? _v.reply['reason'], f, modelValue[f.key], v);
           } else {
-            _updateFieldValidStatus(null, f, modelValue[f.key], v);
+            _updateFieldValidStatus(v.message, f, modelValue[f.key], v);
           }
          }
       }        
